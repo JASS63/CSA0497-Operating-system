@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
-int main() {
+int main()
+{
     char filename[] = "file.txt";
     int new_permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-    if (chmod(filename, new_permissions) == 0) {
+    if (chmod(filename, new_permissions) == 0)
+    {
         printf("File permissions changed successfully.\n");
     } else {
         perror("chmod");
