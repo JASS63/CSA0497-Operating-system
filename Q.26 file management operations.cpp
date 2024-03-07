@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int main() {
+int main() 
+{
     FILE *file;
     char data[] = "Hello, File Management!";
     file = fopen("example.txt", "w");
-    if (file == NULL) {
+    if (file == NULL) 
+    {
         perror("Error creating file");
         exit(EXIT_FAILURE);
     }
