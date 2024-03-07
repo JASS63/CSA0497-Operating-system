@@ -5,20 +5,25 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <dirent.h>
-void displayFileContent(int fileDescriptor) {
+void displayFileContent(int fileDescriptor) 
+{
     char buffer[1024];
     ssize_t bytesRead;
-    while ((bytesRead = read(fileDescriptor, buffer, sizeof(buffer))) > 0) {
+    while ((bytesRead = read(fileDescriptor, buffer, sizeof(buffer))) > 0) 
+    {
         write(STDOUT_FILENO, buffer, bytesRead);
     }
-    if (bytesRead < 0) {
+    if (bytesRead < 0) 
+    {
         perror("Error reading file");
         exit(EXIT_FAILURE);
     }
 }
-int main() {
+int main() 
+{
     int fileDescriptor = open("example.txt", O_RDONLY);
-    if (fileDescriptor < 0) {
+    if (fileDescriptor < 0)
+    {
         perror("Error opening file");
         exit(EXIT_FAILURE);
     }
