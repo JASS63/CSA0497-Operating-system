@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-struct Block {
+struct Block
+{
     char data[256]; 
     struct Block* next;
 };
-int main() {
+
+int main() 
+{
     struct Block* firstBlock = NULL;
     struct Block* lastBlock = NULL; 
     int blockCount = 0;
@@ -13,10 +16,12 @@ int main() {
     char data[256];
     char choice;
     printf("Linked Allocation Simulation\n");
-    while (1) {
+    while (1)
+        {
         printf("Enter 'W' to write a block, 'R' to read a block, or 'Q' to quit: ");
         scanf(" %c", &choice);
-        if (choice == 'Q' || choice == 'q') {
+        if (choice == 'Q' || choice == 'q')
+        {
             break;
         }
         if (choice == 'W' || choice == 'w') {
