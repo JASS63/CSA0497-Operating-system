@@ -1,19 +1,26 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
 #define MAX_FRAMES 3
-void printFrames(int frames[], int n) {
-    for (int i = 0; i < n; i++) {
-        if (frames[i] == -1) {
+void printFrames(int frames[], int n) 
+{
+    for (int i = 0; i < n; i++) 
+    {
+        if (frames[i] == -1) 
+        {
             printf(" - ");
-        } else {
+        } else 
+        {
             printf(" %d ", frames[i]);
         }
     }
     printf("\n");
 }
-int main() {
+int main()
+{
     int frames[MAX_FRAMES];
-    for (int i = 0; i < MAX_FRAMES; i++) {
+    for (int i = 0; i < MAX_FRAMES; i++) 
+    {
         frames[i] = -1; 
     }
     int pageFaults = 0;
