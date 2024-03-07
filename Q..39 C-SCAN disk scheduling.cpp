@@ -1,14 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main() {
+int main()
+{
+   
     int n, head, seek_time = 0;
     printf("Enter the number of disk requests: ");
     scanf("%d", &n);
     int request_queue[n];
     printf("Enter the disk request queue:\n");
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         scanf("%d", &request_queue[i]);
     }
+    
     printf("Enter the initial position of the disk head: ");
     scanf("%d", &head);
     for (int i = 0; i < n - 1; i++) {
