@@ -1,21 +1,28 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
-struct Block {
+struct Block 
+{
     int blockNumber;
     char data[256]; 
 };
-int main() {
+
+int main() 
+{
     FILE *file;
     struct Block block;
     int blockNumber;
     int indexBlock[100] = {0}; 
     file = fopen("indexed_file.txt", "w");
-    if (file == NULL) {
+    if (file == NULL) 
+    
         printf("Error opening the file.\n");
         return 1;
     }
+
     printf("Enter blocks (Enter '0' as block number to exit):\n");
-    while (1) {
+    while (1) 
+    
         printf("Block Number: ");
         scanf("%d", &block.blockNumber);
         if (block.blockNumber == 0) {
