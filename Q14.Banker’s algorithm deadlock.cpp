@@ -10,6 +10,8 @@ void show();
 void cal();
 int main()
 {
+
+  
 int i,j;
 printf("********** Banker's Algo ************\n");
 input();
@@ -18,8 +20,10 @@ cal();
 getch();
 return 0;
 }
+
 void input()
 {
+  
 int i,j;
 printf("Enter the no of Processes\t");
 scanf("%d",&n);
@@ -33,6 +37,7 @@ for(j=0;j<r;j++)
 scanf("%d",&max[i][j]);
 }
 }
+  
 printf("Enter the Allocation Matrix\n");
 for(i=0;i<n;i++)
 {
@@ -41,6 +46,7 @@ for(j=0;j<r;j++)
 scanf("%d",&alloc[i][j]);
 }
 }
+  
 printf("Enter the available Resources\n");
 for(j=0;j<r;j++)
 {
@@ -49,6 +55,7 @@ scanf("%d",&avail[j]);
 }
 void show()
 {
+  
 int i,j;
 printf("Process\t Allocation\t Max\t Available\t");
 for(i=0;i<n;i++)
