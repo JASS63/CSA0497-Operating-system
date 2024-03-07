@@ -3,6 +3,7 @@
 int mutex=1,full=0,empty=3,x=0;
 int main()
 {
+ 
  int n;
  void producer();
  void consumer();
@@ -11,6 +12,7 @@ int main()
  printf("\n1.Producer\n2.Consumer\n3.Exit");
  while(1)
  {
+  
  printf("\nEnter your choice:");
  scanf("%d",&n);
  switch(n)
