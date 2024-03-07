@@ -1,23 +1,32 @@
 #include <stdio.h>
 #define MAX_FRAMES 3
-void printFrames(int frames[], int n) {
-    for (int i = 0; i < n; i++) {
-        if (frames[i] == -1) {
+void printFrames(int frames[], int n)
+{
+    for (int i = 0; i < n; i++) 
+    {
+        if (frames[i] == -1) 
+        {
             printf(" - ");
-        } else {
+        } else 
+        {
+            
             printf(" %d ", frames[i]);
         }
     }
     printf("\n");
 }
-int main() {
-    int referenceString[] = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2};
+
+int main() 
+{
+   
+    int referenceString[] = {7, 0, 1, 3,5,7,2, 3, 0, 3, 2};
     int n = sizeof(referenceString) / sizeof(referenceString[0]);
     int frames[MAX_FRAMES];
     int framePointer = 0;
     for (int i = 0; i < MAX_FRAMES; i++) {
         frames[i] = -1; 
     }
+    
     printf("Reference String: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", referenceString[i]);
