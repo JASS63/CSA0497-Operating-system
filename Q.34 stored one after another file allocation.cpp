@@ -1,20 +1,25 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
-struct Record {
+struct Record 
+{
     int recordNumber;
     char data[256]; 
 };
-int main() {
+int main() 
+{
     FILE *file;
     struct Record record;
     int recordNumber;
     file = fopen("sequential_file.txt", "w");
-    if (file == NULL) {
+    if (file == NULL) 
+    {
         printf("Error opening the file.\n");
         return 1;
     }
     printf("Enter records (Enter '0' as record number to exit):\n");
-    while (1) {
+    while (1)
+        {
         printf("Record Number: ");
         scanf("%d", &record.recordNumber);
         if (record.recordNumber == 0) {
