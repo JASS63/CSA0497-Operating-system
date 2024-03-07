@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 int main()
 {
 int bsize[10], psize[10], bno, pno, flags[10], allocation[10], i, j;
