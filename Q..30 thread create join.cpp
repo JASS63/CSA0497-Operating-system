@@ -1,18 +1,26 @@
 #include <stdio.h>
 #include <pthread.h>
-void *printMessage(void *message) {
+void *printMessage(void *message)
+{
     printf("Thread says: %s\n", (char *)message);
     pthread_exit(NULL);
 }
-void *printNumbers(void *arg) {
+void *printNumbers(void *arg) 
+{
     int *limit = (int *)arg;
-    for (int i = 1; i <= *limit; ++i) {
+    for (int i = 1; i <= *limit; ++i)
+        {
         printf("%d ", i);
     }
+    
     printf("\n");
+    
     pthread_exit(NULL);
 }
+
+
 int main() {
+    
     pthread_t thread1, thread2;
     char message[] = "Hello from the thread!";
     if (pthread_create(&thread1, NULL, printMessage, (void *)message) != 0) {
