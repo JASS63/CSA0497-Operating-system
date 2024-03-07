@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
 void sortRequests(int requests[], int numRequests) {
     int i, j, temp;
@@ -12,6 +13,8 @@ void sortRequests(int requests[], int numRequests) {
         }
     }
 }
+
+
 void scanDisk(int requests[], int numRequests, int head, char direction) {
     int totalHeadMovement = 0;
     int currentHead = head;
@@ -20,31 +23,38 @@ void scanDisk(int requests[], int numRequests, int head, char direction) {
     while (headIndex < numRequests && requests[headIndex] < head) {
         headIndex++;
     }
+    
     if (direction == 'r') {
         for (int i = headIndex; i < numRequests; i++) {
             printf("Move from %d to %d\n", currentHead, requests[i]);
             totalHeadMovement += abs(currentHead - requests[i]);
             currentHead = requests[i];
         }
+
+        
         for (int i = headIndex - 1; i >= 0; i--) {
             printf("Move from %d to %d\n", currentHead, requests[i]);
             totalHeadMovement += abs(currentHead - requests[i]);
             currentHead = requests[i];
         }
     }
+        
     else if (direction == 'l') {
         for (int i = headIndex - 1; i >= 0; i--) {
             printf("Move from %d to %d\n", currentHead, requests[i]);
             totalHeadMovement += abs(currentHead - requests[i]);
             currentHead = requests[i];
         }
+
+        
         for (int i = headIndex; i < numRequests; i++) {
             printf("Move from %d to %d\n", currentHead, requests[i]);
             totalHeadMovement += abs(currentHead - requests[i]);
             currentHead = requests[i];
         }
     }
-    printf("Total head movement: %d\n", totalHeadMovement);
+    
+    printf("Total n.o head movement: %d\n", totalHeadMovement);
 }
 int main() {
     int numRequests, head, i;
