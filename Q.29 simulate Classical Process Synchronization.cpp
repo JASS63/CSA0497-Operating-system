@@ -6,18 +6,25 @@
 #define BUFFER_SIZE 5
 #define NUM_PRODUCERS 2
 #define NUM_CONSUMERS 2
+
 sem_t empty, full, mutex;
 int buffer[BUFFER_SIZE];
 int in = 0, out = 0;
-void sleep_ms(int milliseconds) {
+void sleep_ms(int milliseconds) 
+{
     struct timespec ts;
     ts.tv_sec = milliseconds / 1000;
     ts.tv_nsec = (milliseconds % 1000) * 1000000;
     nanosleep(&ts, NULL);
 }
-void *producer(void *arg) {
+
+void *producer(void *arg)
+{
+    
     int item;
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 5; ++i) 
+    {
+        
         item = rand() % 100; 
         sem_wait(&empty);
         sem_wait(&mutex);
@@ -28,9 +35,13 @@ void *producer(void *arg) {
         sem_post(&full);
         sleep_ms(100);
     }
+    
     pthread_exit(NULL);
 }
-void *consumer(void *arg) {
+
+void *consumer(void *arg) 
+
+{
     int item;
     for (int i = 0; i < 5; ++i) {
         sem_wait(&full);
