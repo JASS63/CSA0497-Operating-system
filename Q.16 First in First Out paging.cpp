@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<conio.h>
 int main()
 {
  int incomingStream[] = {4, 1, 2, 4, 5};
