@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<conio.h>
-#include<string.h>
 int main()
 {
+  
 int nf=0,i=0,j=0,ch;
 char mdname[10],fname[10][10],name[10];
 printf("Enter the directory name:");
