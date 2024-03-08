@@ -1,11 +1,14 @@
 #include <stdio.h>
+#include<conio.h>
 #include <stdlib.h>
-struct Employee {
+struct Employee
+{
     int empId;
     char empName[30];
     float empSalary;
 };
-void addEmployee(FILE *file) {
+void addEmployee(FILE *file)
+{
     struct Employee emp;
     printf("Enter Employee ID: ");
     scanf("%d", &emp.empId);
@@ -17,22 +20,26 @@ void addEmployee(FILE *file) {
     fwrite(&emp, sizeof(struct Employee), 1, file);
     printf("Employee details added successfully!\n");
 }
-void displayEmployee(FILE *file) {
+void displayEmployee(FILE *file) 
+{
     struct Employee emp;
     int empId;
     printf("Enter Employee ID to display details: ");
     scanf("%d", &empId);
     fseek(file, (empId - 1) * sizeof(struct Employee), SEEK_SET);
     fread(&emp, sizeof(struct Employee), 1, file);
-    if (emp.empId != 0) {
+    if (emp.empId != 0) 
+    {
         printf("Employee ID: %d\n", emp.empId);
         printf("Employee Name: %s\n", emp.empName);
         printf("Employee Salary: %.2f\n", emp.empSalary);
-    } else {
+    } else 
+    {
         printf("Employee not found!\n");
     }
 }
-void updateEmployee(FILE *file) {
+void updateEmployee(FILE *file)
+{
     struct Employee emp;
     int empId;
     printf("Enter Employee ID to update details: ");
@@ -48,29 +55,37 @@ void updateEmployee(FILE *file) {
         fwrite(&emp, sizeof(struct Employee), 1, file);
 
         printf("Employee details updated successfully!\n");
-    } else {
+    }
+    else 
+    
+    {
         printf("Employee not found!\n");
     }
 }
-int main() {
+int main() 
+{
     FILE *file;
     int choice;
     file = fopen("employee.dat", "r+");
-    if (file == NULL) {
+    if (file == NULL)
+    {
         file = fopen("employee.dat", "w+");
-        if (file == NULL) {
+        if (file == NULL)
+        {
             printf("Error creating/opening file!\n");
             exit(1);
         }
     }
-    do {
+    do
+        {
         printf("\n1. Add Employee\n");
         printf("2. Display Employee Details\n");
         printf("3. Update Employee Details\n");
         printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        switch (choice) {
+        switch (choice)
+            {
             case 1:
                 addEmployee(file);
                 break;
@@ -85,8 +100,10 @@ int main() {
             default:
                 printf("Invalid choice! Please enter a valid option.\n");
         }
-    } while (choice != 4);
+    } 
+        while (choice != 4);
     fclose(file);
+    
     return 0;
 }
 
