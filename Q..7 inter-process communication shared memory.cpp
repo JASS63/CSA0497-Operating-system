@@ -4,6 +4,7 @@
 #include<sys/shm.h> 
 #include<string.h> 
 int main() 
+
 { 
 int i; 
 void *shared_memory; 
